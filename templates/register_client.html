@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register New Client</title>
+</head>
+<body>
+    
+    <form action="register_client" method="POST">
+        {% csrf_token %}
+
+        <input type="text" name="name" placeholder="Client's Name"><br>
+        <input type="number" name="nif" placeholder="Client's NIF"><br>
+        <input type="email" name="mail" placeholder="Client's Email"><br>
+        <input type="date" name="date_birth" placeholder="Client's Birth day"><br>
+        <input type="submit">
+
+    </form>
+
+</body>
+</html>

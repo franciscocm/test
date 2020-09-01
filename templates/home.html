@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+<h1>Olá {{clients.username}}</h1>
+<br>
+<p>Fazer o Logout:</p>
+<a href="register_client/logout">Logout</a>
+
+{% else %}
+
+<p>Registar Novo Cliente:</p>
+<a href="register_client/register_client">Registar Cliente</a>
+<br>
+<p>Fazer Login:</p>
+<a href="register_client/login">Login</a>
+
+{% endif %}
+
+
+
+{% endblock %}

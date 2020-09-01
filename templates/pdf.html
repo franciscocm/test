@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<title>ZEEV Client Backlog</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+		<link href="{% static 'css/style.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="text-center">
+                        ZEEV Internal System - Check-out Book
+                    </h3>
+                    <h5 class="text-left">
+                        Nome: {{client.name}}
+                    </h5>
+                    <h5 class="text-left">
+                        NIF: {{client.nif}}
+                    </h5>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Livro
+                                </th>
+                                <th>
+                                    Dias de aluguer
+                                </th>
+                                <th>
+                                    Valor diário
+                                </th>
+                                <th>
+                                    Valor total
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for each in backlog_by_nif %}
+                                <tr>
+                                    <td>
+                                        {{each.book}}
+                                    </td>
+                                    <td>
+                                        {{each.days}}
+                                    </td>
+                                    <td>
+                                        {{each.price}}
+                                    </td>
+                                    <td>
+                                        {{each.value}}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <form>
+            <div class="btn-group-center" role="group">
+                <button class="btn btn-secondary" type="submit">
+                    Check In Book
+                </button>
+            </div>
+        </form>
+        </div>
+    </body>
+</html>
